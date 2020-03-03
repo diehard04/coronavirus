@@ -13,17 +13,24 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.diehard04.coronavirus.R;
+import com.diehard04.coronavirus.model.HomeModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private TextView tvTotalCases, tvTotalCritical, tvTotalDeath, tvTotalRecovered;
+    private DatabaseReference mDatabaseReference;
+    private FirebaseDatabase mFirebaseInstance;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        mFirebaseInstance = FirebaseDatabase.getInstance();
+        mDatabaseReference = mFirebaseInstance.getReference();
         final TextView textView = root.findViewById(R.id.text_home);
         tvTotalCases = root.findViewById(R.id.tv_total_case);
         tvTotalCritical = root.findViewById(R.id.tv_critical_numbers);
@@ -40,6 +47,6 @@ public class HomeFragment extends Fragment {
     }
 
     private void updateDataFromFirebase() {
-
+        HomeModel homeModel = new HomeModel("62111", "3000","2011","6000");
     }
 }

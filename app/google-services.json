@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "845234162379",
+    "firebase_url": "https://coronavirus-afb52.firebaseio.com",
+    "project_id": "coronavirus-afb52",
+    "storage_bucket": "coronavirus-afb52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845234162379:android:4d97109fb8d345a532294e",
+        "android_client_info": {
+          "package_name": "com.diehard04.coronavirus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845234162379-llkv8lu0406n1j01pssh72beq6jns62h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diehard04.coronavirus",
+            "certificate_hash": "905d030cd9f7eeb74f7285de782b571c28021c02"
+          }
+        },
+        {
+          "client_id": "845234162379-n4v9v9mff9dliukuqj2cl23cqcua8gei.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsccYDs2Gc-AOfqMxQcNjqYcmbzM358hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845234162379-n4v9v9mff9dliukuqj2cl23cqcua8gei.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
