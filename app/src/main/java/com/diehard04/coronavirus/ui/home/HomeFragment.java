@@ -1,4 +1,4 @@
-package com.example.coronavirus.ui.home;
+package com.diehard04.coronavirus.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,11 +12,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.coronavirus.R;
+import com.diehard04.coronavirus.R;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private TextView tvTotalCases, tvTotalCritical, tvTotalDeath, tvTotalRecovered;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,6 +25,11 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
+        tvTotalCases = root.findViewById(R.id.tv_total_case);
+        tvTotalCritical = root.findViewById(R.id.tv_critical_numbers);
+        tvTotalDeath = root.findViewById(R.id.tv_death_numbers);
+        tvTotalRecovered = root.findViewById(R.id.tv_recovered_numbers);
+        updateDataFromFirebase();
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -31,5 +37,9 @@ public class HomeFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    private void updateDataFromFirebase() {
+
     }
 }

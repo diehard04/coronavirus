@@ -1,4 +1,4 @@
-package com.example.coronavirus.ui.dashboard;
+package com.diehard04.coronavirus.ui.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.coronavirus.R;
+import com.diehard04.coronavirus.R;
 
 public class DashboardFragment extends Fragment {
 

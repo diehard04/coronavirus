@@ -1,4 +1,4 @@
-package com.example.coronavirus.ui.dashboard;
+package com.diehard04.coronavirus.ui.dashboard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

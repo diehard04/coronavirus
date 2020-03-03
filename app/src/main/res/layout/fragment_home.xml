@@ -29,7 +29,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/total_case"
+        android:id="@+id/tv_total_case"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_10"
@@ -60,7 +60,7 @@
                 android:textSize="@dimen/size_16" />
 
             <TextView
-                android:id="@+id/critical_numbers"
+                android:id="@+id/tv_critical_numbers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2,790" />
@@ -83,7 +83,7 @@
                 android:textSize="@dimen/size_16" />
 
             <TextView
-                android:id="@+id/death_numbers"
+                android:id="@+id/tv_death_numbers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="427" />
@@ -106,7 +106,7 @@
                 android:textSize="@dimen/size_16" />
 
             <TextView
-                android:id="@+id/recovered_numbers"
+                android:id="@+id/tv_recovered_numbers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="658" />

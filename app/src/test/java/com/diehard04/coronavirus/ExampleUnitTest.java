@@ -1,4 +1,4 @@
-package com.example.coronavirus;
+package com.diehard04.coronavirus;
 
 import org.junit.Test;
 
