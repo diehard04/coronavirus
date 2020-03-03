@@ -13,9 +13,12 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.diehard04.coronavirus.R;
-import com.diehard04.coronavirus.model.HomeModel;
+import com.diehard04.coronavirus.model.CoronaHomeModel;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HomeFragment extends Fragment {
 
@@ -30,7 +33,7 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         mFirebaseInstance = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseInstance.getReference();
+        mDatabaseReference = mFirebaseInstance.getReference("coronahome");
         final TextView textView = root.findViewById(R.id.text_home);
         tvTotalCases = root.findViewById(R.id.tv_total_case);
         tvTotalCritical = root.findViewById(R.id.tv_critical_numbers);
@@ -47,6 +50,21 @@ public class HomeFragment extends Fragment {
     }
 
     private void updateDataFromFirebase() {
-        HomeModel homeModel = new HomeModel("62111", "3000","2011","6000");
+        mDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                System.out.println(" data= " + dataSnapshot.getValue());
+                CoronaHomeModel coronaHomeModel = dataSnapshot.getValue(CoronaHomeModel.class);
+                tvTotalCases.setText(coronaHomeModel.getTotal_cases());
+                tvTotalCritical.setText(coronaHomeModel.getTotal_critical());
+                tvTotalDeath.setText(coronaHomeModel.getTotal_death());
+                tvTotalRecovered.setText(coronaHomeModel.getTotal_recovered());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
