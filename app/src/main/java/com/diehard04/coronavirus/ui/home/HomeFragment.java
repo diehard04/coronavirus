@@ -17,6 +17,7 @@ import com.diehard04.coronavirus.model.CoronaHomeModel;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.firebase.database.DataSnapshot;
@@ -25,14 +26,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private TextView tvTotalCases, tvTotalCritical, tvTotalDeath, tvTotalRecovered;
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase mFirebaseInstance;
-    private MobileAds mMobileAds;
-    private AdView mAdView;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,9 +48,7 @@ public class HomeFragment extends Fragment {
         tvTotalCritical = root.findViewById(R.id.tv_critical_numbers);
         tvTotalDeath = root.findViewById(R.id.tv_death_numbers);
         tvTotalRecovered = root.findViewById(R.id.tv_recovered_numbers);
-        mAdView = root.findViewById(R.id.ad_view);
         updateDataFromFirebase();
-        initAdsView();
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -56,17 +56,6 @@ public class HomeFragment extends Fragment {
             }
         });
         return root;
-    }
-
-    private void initAdsView() {
-        mMobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-                System.out.println("initAdsView = " + initializationStatus);
-            }
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
     }
 
     private void updateDataFromFirebase() {

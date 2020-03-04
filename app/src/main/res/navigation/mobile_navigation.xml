@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.diehard04.coronavirus.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.diehard04.coronavirus.ui.world.WorldFragment"
+        android:label="@string/title_world"
+        tools:layout="@layout/fragment_news" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.diehard04.coronavirus.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.diehard04.coronavirus.ui.india.IndiaFragment"
+        android:label="@string/title_india"
+        tools:layout="@layout/fragment_india" />
 </navigation>

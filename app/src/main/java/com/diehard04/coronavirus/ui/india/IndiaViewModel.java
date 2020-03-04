@@ -1,14 +1,14 @@
-package com.diehard04.coronavirus.ui.notifications;
+package com.diehard04.coronavirus.ui.india;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class IndiaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public IndiaViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is notifications fragment");
     }

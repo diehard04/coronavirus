@@ -43,9 +43,10 @@
         android:textSize="@dimen/size_30" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_below="@+id/tv_total_case"
+        android:id="@+id/cl_status"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_total_case"
         android:layout_marginTop="@dimen/size_30">
 
         <LinearLayout
@@ -119,12 +120,4 @@
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/ad_view"
-        android:background="@color/darkGray"
-        android:layout_alignParentBottom="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-9893908283565590/6895670868"></com.google.android.gms.ads.AdView>
 </RelativeLayout>
