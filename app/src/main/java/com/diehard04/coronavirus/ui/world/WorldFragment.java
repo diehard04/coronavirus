@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.diehard04.coronavirus.R;
 import com.diehard04.coronavirus.adapters.CountriesAdapter;
 import com.diehard04.coronavirus.model.CountriesModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,13 +31,21 @@ public class WorldFragment extends Fragment {
     private WebView webView;
     private RecyclerView rvCountries;
     private CountriesAdapter mCountriesAdapter;
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReferenceCountriesModel;
+
     private List<CountriesModel> countriesModelList = new ArrayList<>();
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         worldViewModel =
                 ViewModelProviders.of(this).get(WorldViewModel.class);
         View root = inflater.inflate(R.layout.fragment_world, container, false);
         initView(root);
+        firebaseDatabaseHelper();
         return root;
+    }
+
+    private void firebaseDatabaseHelper() {
+        mDatabase = FirebaseDatabase.getInstance();
     }
 
     private void initView(View root) {
