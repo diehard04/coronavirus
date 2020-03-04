@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,8 +21,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tv_coronoa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_home"
         android:layout_marginTop="@dimen/dimen_50"
         android:gravity="center_horizontal"
         android:text="Coronavirus Cases:"
@@ -32,6 +35,7 @@
         android:id="@+id/tv_total_case"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_coronoa"
         android:layout_marginTop="@dimen/dimen_10"
         android:gravity="center_horizontal"
         android:text="20,629"
@@ -39,17 +43,18 @@
         android:textSize="@dimen/size_30" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginTop="@dimen/size_30"
+        android:layout_below="@+id/tv_total_case"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_30">
 
         <LinearLayout
             android:id="@+id/critical_ll"
-            app:layout_constraintHorizontal_chainStyle="spread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@id/death_ll"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -68,13 +73,13 @@
         </LinearLayout>
 
         <LinearLayout
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/death_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/recovered_ll"
-            app:layout_constraintStart_toEndOf="@id/critical_ll">
+            app:layout_constraintStart_toEndOf="@id/critical_ll"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,9 +100,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/death_ll">
+            app:layout_constraintStart_toEndOf="@id/death_ll"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,4 +118,13 @@
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ad_view"
+        android:background="@color/darkGray"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9893908283565590/6895670868"></com.google.android.gms.ads.AdView>
+</RelativeLayout>
