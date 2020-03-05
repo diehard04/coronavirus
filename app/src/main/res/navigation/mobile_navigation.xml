@@ -22,4 +22,9 @@
         android:name="com.diehard04.coronavirus.ui.india.IndiaFragment"
         android:label="@string/title_india"
         tools:layout="@layout/fragment_india" />
+    <fragment
+        android:id="@+id/navigation_news"
+        android:name="com.diehard04.coronavirus.ui.news.NewsFragment"
+        android:label="@string/title_news"
+        tools:layout="@layout/fragment_news"/>
 </navigation>
