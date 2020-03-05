@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_20"
+    android:elevation="@dimen/dimen_5"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/dimen_5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/dimen_10">
+
+        <TextView
+            android:id="@+id/ad_cities_tv_city_name"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Bangalore"
+            android:textSize="@dimen/size_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ad_cities_tv_total_cases"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:gravity="center"
+            android:text="80,089"
+            android:textSize="@dimen/size_16" />
+
+        <TextView
+            android:id="@+id/ad_cities_tv_new_cases"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:gravity="center"
+            android:text="+131"
+            android:textSize="@dimen/size_16" />
+
+        <TextView
+            android:id="@+id/ad_cities_tv_total_death"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:gravity="center"
+            android:text="2,981"
+            android:textSize="@dimen/size_16" />
+
+        <TextView
+            android:id="@+id/ad_cities_tv_recovered_cases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:gravity="center"
+            android:text="49,321"
+            android:textSize="@dimen/size_16" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
