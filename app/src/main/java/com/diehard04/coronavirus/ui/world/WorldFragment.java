@@ -54,12 +54,13 @@ public class WorldFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 System.out.println("onDataChange= " + dataSnapshot.getValue());
-//                List<String> keys = new ArrayList<>();
-//                for (DataSnapshot keyMode : dataSnapshot.getChildren()) {
-//                    keys.add(keyMode.getKey());
-//                    CountriesModel countriesModel = keyMode.getValue(CountriesModel.class);
-//                    countriesModelList.add(countriesModel);
-//                }
+                List<String> keys = new ArrayList<>();
+                for (DataSnapshot keyMode : dataSnapshot.getChildren()) {
+                    keys.add(keyMode.getKey());
+                    CountriesModel countriesModel = keyMode.getValue(CountriesModel.class);
+                    countriesModelList.add(countriesModel);
+                }
+                mCountriesAdapter.notifyDataSetChanged();
             }
 
             @Override
