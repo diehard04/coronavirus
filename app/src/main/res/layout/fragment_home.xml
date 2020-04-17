@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@id/death_ll"
+            app:layout_constraintEnd_toStartOf="@id/new_ll"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -74,7 +74,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/death_ll"
+            android:id="@+id/new_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -85,11 +85,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Death"
+                android:text="New Cases"
                 android:textSize="@dimen/size_16" />
 
             <TextView
-                android:id="@+id/tv_death_numbers"
+                android:id="@+id/tv_new_cases_numbers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="427" />
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/death_ll"
+            app:layout_constraintStart_toEndOf="@id/new_ll"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
